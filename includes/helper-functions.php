@@ -1,5 +1,16 @@
 <?php
 /**
+ * Helper function to provide directory path to MBC
+ * @since  2.0.0
+ * @param  string  $path Path to append
+ * @return string        Directory with optional path appended
+ */
+function mbc_dir($path = '')
+{
+    return MBC_DIR . $path;
+}
+
+/**
  * Add New MBC Column
  * @since  2.0.0
  * @return MBC object
@@ -94,4 +105,3 @@ function mbc_rename_column($args)
 
     mbc_alter_column($args);
 }
-

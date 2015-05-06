@@ -63,8 +63,8 @@ if ( ! class_exists( 'mbc_bootstrap', false ) ) {
 
         private function __construct()
         {
-            add_action( 'init', array( $this, 'include_mbc' ), 9999 );
-            add_action( 'init', array( $this, 'mbc_init' ), 9999 );
+            add_action( 'plugins_loaded', array( $this, 'include_mbc' ), 994 );
+            add_action( 'include_mbc', array( $this, 'mbc_init' ), 996 );
         }
 
         public function include_mbc()
@@ -85,6 +85,8 @@ if ( ! class_exists( 'mbc_bootstrap', false ) ) {
                 require_once 'includes/helper-functions.php';
                 require_once 'includes/MBC_Objects.php';
                 require_once 'includes/MBC.php';
+
+                do_action('include_mbc');
             }
         }
 
